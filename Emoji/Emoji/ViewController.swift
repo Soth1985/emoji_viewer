@@ -36,6 +36,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.table.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "detailsSegue", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let row = sender as? Int, let detailsView = segue.destination as? DetailsViewController
+        {
+            detailsView.curEmoji = emojis[row]
+        }
+    }
+    
     @IBOutlet weak var table: UITableView!
     
     @IBAction func onTouch(_ sender: Any) {

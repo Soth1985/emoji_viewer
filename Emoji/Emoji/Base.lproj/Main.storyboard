@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Emoji" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" userLabel="Main View Controller" customClass="ViewController" customModule="Emoji" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="476" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="r4f-ss-6d4">
             <objects>
-                <viewController id="HwH-7p-mUi" sceneMemberID="viewController">
+                <viewController id="HwH-7p-mUi" userLabel="Details View Controller" customClass="DetailsViewController" customModule="Emoji" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uMT-gD-lYc"/>
                         <viewControllerLayoutGuide type="bottom" id="dXS-Dj-AdW"/>
@@ -56,16 +56,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bd-yD-0Bd">
-                                <rect key="frame" x="149" y="254" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🦊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bd-yD-0Bd" userLabel="Emoji">
+                                <rect key="frame" x="0.0" y="94" width="375" height="239"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqv-J7-E5h" userLabel="Description">
+                                <rect key="frame" x="151.5" y="373" width="71" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9bd-yD-0Bd" firstAttribute="top" secondItem="uMT-gD-lYc" secondAttribute="bottom" constant="30" id="7QS-zO-VS7"/>
+                            <constraint firstItem="Zqv-J7-E5h" firstAttribute="centerX" secondItem="LmX-9d-Xyx" secondAttribute="centerX" id="NE2-uV-lTQ"/>
+                            <constraint firstItem="9bd-yD-0Bd" firstAttribute="centerX" secondItem="LmX-9d-Xyx" secondAttribute="centerX" id="Urj-G9-kM1"/>
+                            <constraint firstItem="9bd-yD-0Bd" firstAttribute="leading" secondItem="LmX-9d-Xyx" secondAttribute="leading" id="fjU-f3-iW1"/>
+                            <constraint firstAttribute="trailing" secondItem="9bd-yD-0Bd" secondAttribute="trailing" id="tlT-Xr-Tl1"/>
+                            <constraint firstItem="Zqv-J7-E5h" firstAttribute="top" secondItem="9bd-yD-0Bd" secondAttribute="bottom" constant="40" id="vNt-ha-9Fy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emoji" destination="9bd-yD-0Bd" id="Gd4-c1-XVK"/>
+                        <outlet property="emojiDescription" destination="Zqv-J7-E5h" id="hzJ-Ny-ETk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1g-uG-zZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
